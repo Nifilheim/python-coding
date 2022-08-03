@@ -1,0 +1,36 @@
+import random
+uppercaseLetter1=chr(random.randint(65,90)) #Generate a random Uppercase letter (based on ASCII code)
+print(uppercaseLetter1)
+
+import random
+uppercaseLetter2=chr(random.randint(65,90)) #Generate a random Uppercase letter (based on ASCII code)
+print(uppercaseLetter2)
+
+import random
+lowercaseLetter1=chr(random.randint(97,122)) #Generate a random lowercase letter (based on ASCII code)
+print(lowercaseLetter1)
+
+import random
+lowercaseLetter2=chr(random.randint(97,122)) #Generate a random lowercase letter (based on ASCII code)
+print(lowercaseLetter2)
+
+import random
+digit1=chr(random.randint(48,57)) #Generate a random digit (based on ASCII code)
+print(digit1)
+
+import random
+digit2=chr(random.randint(48,57)) #Generate a random digit (based on ASCII code)
+print(digit2)
+
+import random
+puncuationSign1=chr(random.randint(33,47)) #Generate a random puncuation sign (based on ASCII code
+print(puncuationSign1)
+
+import random
+puncuationSign2=chr(random.randint(33,47)) #Generate a random puncuation sign (based on ASCII code)
+print(puncuationSign2)
+
+password=uppercaseLetter1+uppercaseLetter2+lowercaseLetter1+lowercaseLetter2+digit1+digit2+puncuationSign1+puncuationSign2
+
+
+print(password)  
