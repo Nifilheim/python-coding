@@ -1,0 +1,37 @@
+import random
+
+# D&D 5e options
+races = ["Human", "Elf", "Dwarf", "Halfling", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
+classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
+
+# Function to roll 4d6, drop the lowest, and sum the remaining
+def roll_ability_score():
+    rolls = [random.randint(1, 6) for _ in range(4)]
+    return sum(sorted(rolls)[1:])  # Drop the lowest roll
+
+# Function to calculate ability score modifier
+def calculate_modifier(score):
+    return (score - 10) // 2
+
+# Generate random race, class, and ability scores
+def generate_character():
+    character = {
+        "Race": random.choice(races),
+        "Class": random.choice(classes),
+        "Ability Scores": {stat: roll_ability_score() for stat in ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]},
+    }
+    
+    # Calculate and add ability score modifiers
+    character["Modifiers"] = {stat: calculate_modifier(score) for stat, score in character["Ability Scores"].items()}
+    
+    return character
+
+# Create and display a character
+character = generate_character()
+
+print("D&D 5e Character:")
+print("Race:", character["Race"])
+print("Class:", character["Class"])
+print("\nAbility Scores:")
+for stat, score in character["Ability Scores"].items():
+    print(f"  {stat}: {score} (Modifier: {character['Modifiers'][stat]})")
